@@ -11,11 +11,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Tempo Atelier | Tu Estilo, Nuestra Pasión",
+  title: "TEMPO Atelier | Tu Estilo, Nuestra Pasión",
   description: "Peluquería unisex en Corrientes, Argentina. Cortes masculinos, hidratación y brushing. Una experiencia personalizada en un ambiente elegante y sofisticado.",
   keywords: ["peluquería", "corrientes", "corte de pelo", "unisex", "tempo atelier", "hidratación", "brushing"],
   openGraph: {
-    title: "Tempo Atelier | Tu Estilo, Nuestra Pasión",
+    title: "TEMPO Atelier | Tu Estilo, Nuestra Pasión",
     description: "Peluquería unisex en Corrientes, Argentina. Una experiencia personalizada en un ambiente elegante.",
     locale: "es_AR",
     type: "website",
