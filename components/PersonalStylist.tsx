@@ -7,7 +7,15 @@ export default function PersonalStylist() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="lg:order-1">
-            <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl text-black leading-[1.1]">
+            <h2
+              className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl leading-[1.1]"
+              style={{
+                background: 'linear-gradient(to bottom, #141414, #C9A227)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
               <span className="italic">Tu Estilista</span>
               <br />
               <span className="font-light">Personal</span>
