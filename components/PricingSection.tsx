@@ -8,10 +8,10 @@ const prices = [
 
 export default function PricingSection() {
   return (
-    <section id="precios" className="py-16 lg:py-24 bg-gradient-to-br from-[#6d5a42] via-[#7a6548] to-[#8a7555]">
+    <section id="precios" className="py-16 lg:py-24 bg-linear-to-br from-[#6d5a42] via-[#7a6548] to-[#8a7555]">
       <div className="max-w-2xl mx-auto px-6 lg:px-12">
         {/* Section Title */}
-        <h2 className="font-[var(--font-display)] text-3xl lg:text-4xl text-white font-medium text-center mb-12">
+        <h2 className="font-(--font-display) text-3xl lg:text-4xl text-white text-center mb-12">
           Precios
         </h2>
 

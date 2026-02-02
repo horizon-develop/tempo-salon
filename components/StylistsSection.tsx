@@ -6,24 +6,24 @@ export default function StylistsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="font-[var(--font-display)] text-3xl lg:text-4xl text-black font-medium mb-4">
-            Conocé A Nuestros Estilistas
+          <h2 className="font-(--font-display) text-3xl lg:text-4xl text-black mb-4">
+            Conoce A Nuestros Estilistas
           </h2>
           <div className="h-px bg-neutral-200 w-full" />
         </div>
 
         {/* Stylists with Background Text */}
-        <div className="relative h-[400px] lg:h-[500px] flex items-center justify-center">
+        <div className="relative h-100 lg:h-125 flex items-center justify-center">
           {/* Background Text */}
           <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none">
             <div className="text-center">
-              <p className="font-[var(--font-display)] text-4xl md:text-6xl lg:text-8xl font-bold text-neutral-100 uppercase leading-tight tracking-wide">
+              <p className="font-(--font-display) text-4xl md:text-6xl lg:text-8xl text-neutral-100 uppercase leading-tight tracking-wide">
                 If You Can
               </p>
-              <p className="font-[var(--font-display)] text-4xl md:text-6xl lg:text-8xl font-bold text-neutral-100 uppercase leading-tight tracking-wide">
+              <p className="text-4xl md:text-6xl lg:text-8xl font-bold text-neutral-100 uppercase leading-tight tracking-wide">
                 Dream It You
               </p>
-              <p className="font-[var(--font-display)] text-4xl md:text-6xl lg:text-8xl font-bold text-neutral-100 uppercase leading-tight tracking-wide">
+              <p className="text-4xl md:text-6xl lg:text-8xl font-bold text-neutral-100 uppercase leading-tight tracking-wide">
                 Can Be It
               </p>
             </div>

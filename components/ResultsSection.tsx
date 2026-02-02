@@ -46,7 +46,7 @@ export default function ResultsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-12">
-          <h2 className="font-[var(--font-display)] text-3xl lg:text-4xl mb-4">
+          <h2 className="font-(--font-display) text-3xl lg:text-4xl mb-4">
             <span className="text-black font-medium">Nuestros </span>
             <span className="text-[#BE8F45] italic">Resultados</span>
           </h2>
@@ -61,7 +61,7 @@ export default function ResultsSection() {
                 key={index}
                 className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] px-3"
               >
-                <div className="relative aspect-[4/5] bg-neutral-100 overflow-hidden group cursor-pointer">
+                <div className="relative aspect-4/5 bg-neutral-100 overflow-hidden group cursor-pointer">
                   <Image
                     src={result.image}
                     alt={result.title}
@@ -69,7 +69,7 @@ export default function ResultsSection() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Service Name - shows on hover */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -94,7 +94,7 @@ export default function ResultsSection() {
               onClick={() => scrollTo(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 selectedIndex === index
-                  ? "bg-[var(--gold)] w-3"
+                  ? "bg-gold w-3"
                   : "bg-neutral-300 hover:bg-neutral-400"
               }`}
               aria-label={`Ir a slide ${index + 1}`}
