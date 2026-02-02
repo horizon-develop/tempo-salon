@@ -343,3 +343,99 @@ section[id] {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.3), transparent);
 }
+
+/* Navigation link hover effect */
+.nav-link-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link-hover:hover {
+  color: white;
+}
+
+.nav-link-underline {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link-hover:hover .nav-link-underline,
+.nav-link-underline.nav-link-active {
+  opacity: 1;
+}
+
+.nav-line-large {
+  width: 20px;
+  height: 1px;
+  background-color: #BE8F45;
+}
+
+.nav-line-small {
+  width: 3px;
+  height: 1px;
+  background-color: #BE8F45;
+}
+
+/* Pill-shaped images */
+.pill-image {
+  border-radius: 9999px;
+  position: relative;
+}
+
+/* Reservar button with golden corners */
+.btn-reservar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: transparent;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Golden corner triangles - 4px away from the border */
+.btn-corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Top-right corner */
+.btn-corner-tr {
+  top: 4px;
+  right: 4px;
+  border-width: 0 10px 10px 0;
+  border-color: transparent #BE8F45 transparent transparent;
+}
+
+/* Bottom-left corner */
+.btn-corner-bl {
+  bottom: 4px;
+  left: 4px;
+  border-width: 0 10px 10px 0;
+  border-color: transparent transparent #BE8F45 transparent;
+}
+
+.btn-reservar:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}

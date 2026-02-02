@@ -1,11 +1,10 @@
 import {
   Navbar,
   Hero,
-  ServicesBar,
-  PersonalStylist,
-  QuoteBanner,
-  NumberedServices,
-  Contact,
+  AboutSection,
+  ResultsSection,
+  PricingSection,
+  StylistsSection,
   Footer,
 } from "@/components";
 
@@ -14,11 +13,10 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--warm-white)]">
       <Navbar />
       <Hero />
-      <ServicesBar />
-      <PersonalStylist />
-      <QuoteBanner />
-      <NumberedServices />
-      <Contact />
+      <AboutSection />
+      <ResultsSection />
+      <PricingSection />
+      <StylistsSection />
       <Footer />
     </div>
   );
