@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       {/* Top Bar - Social icons and address */}
-      <div className="bg-transparent pt-[9px]">
-        <div className="flex items-center justify-between text-white/80 text-xs pl-[80px] pr-[109px] pb-[9px]">
+      <div className="bg-transparent pt-2.25">
+        <div className="flex items-center justify-between text-white/80 text-xs pl-20 pr-27.25 pb-2.25">
           {/* Social Icons */}
           <div className="flex items-center gap-2">
             <a
@@ -11,7 +13,7 @@ export default function Navbar() {
               className="hover:text-white transition-colors"
               aria-label="Facebook"
             >
-              <img src="/icons/facebook.svg" alt="Facebook" className="w-[10px] h-[10px]" />
+              <Image src="/icons/facebook.svg" alt="Facebook" width={7} height={10} />
             </a>
             <a
               href="https://www.instagram.com/tempo.atelier"
@@ -20,7 +22,7 @@ export default function Navbar() {
               className="hover:text-white transition-colors"
               aria-label="Instagram"
             >
-              <img src="/icons/instagram.svg" alt="Instagram" className="w-[10px] h-[10px]" />
+              <Image src="/icons/instagram.svg" alt="Instagram" width={13} height={10} />
             </a>
           </div>
 
@@ -35,12 +37,12 @@ export default function Navbar() {
       </div>
 
       {/* Main Navigation */}
-      <div className="bg-transparent pt-[12px]">
-        <div className="pl-[80px] pr-[109px]">
+      <div className="bg-transparent pt-3">
+        <div className="pl-20 pr-27.25">
           <div className="flex items-center justify-between h-14">
             {/* Logo */}
             <a href="#" className="flex items-center">
-              <span className="font-[var(--font-display)] text-[38px] font-medium tracking-[0.05em] text-white">
+              <span className="text-[38px] font-medium tracking-[0.05em] text-white">
                 TEMPO
               </span>
             </a>

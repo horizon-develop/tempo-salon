@@ -10,22 +10,22 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full px-[80px] pt-32 pb-[111px] h-screen flex items-center">
+      <div className="relative z-10 w-full px-20 pt-32 pb-27.75 h-screen flex items-center">
         <div className="flex justify-between items-end w-full">
           {/* Left content */}
           <div>
             <div className="opacity-0 animate-fade-in-up">
               <h1>
-                <span className="block font-[var(--font-display)] text-[40px] md:text-[50px] lg:text-[60px] font-medium text-white leading-[1.1]">
+                <span className="block font-(--font-display) text-[40px] md:text-[50px] lg:text-[60px] text-white leading-[1.1]">
                   Tu Estilo Personal
                 </span>
-                <span className="block font-[var(--font-display)] text-[60px] md:text-[75px] lg:text-[90px] font-medium italic text-[#BE8F45] leading-[1.1] whitespace-nowrap">
+                <span className="block font-(--font-display) text-[60px] md:text-[75px] lg:text-[90px] italic text-[#BE8F45] leading-[1.1] whitespace-nowrap">
                   Nuestra Pasión
                 </span>
               </h1>
             </div>
 
-            <div className="opacity-0 animate-fade-in-up delay-200 mt-[111px]">
+            <div className="opacity-0 animate-fade-in-up delay-200 mt-27.75">
               <a
                 href="https://shelbyturnos.vercel.app/"
                 target="_blank"
@@ -40,10 +40,10 @@ export default function Hero() {
           </div>
 
           {/* Right content - Image collage */}
-          <div className="hidden lg:block relative h-[416px] w-[546px] flex-shrink-0">
+          <div className="hidden lg:block relative h-104 w-136.5 shrink-0">
             {/* Main image - rounded corners except bottom-left (264x416) */}
             <div
-              className="absolute top-0 right-0 w-[264px] h-[416px] opacity-0 animate-slide-left delay-200 overflow-hidden bg-white"
+              className="absolute top-0 right-0 w-66 h-104 opacity-0 animate-slide-left delay-200 overflow-hidden bg-white"
               style={{
                 borderTopLeftRadius: '132px',
                 borderTopRightRadius: '132px',
@@ -67,7 +67,7 @@ export default function Hero() {
 
             {/* Second image - rounded left side, flat right side (262x180) */}
             <div
-              className="absolute bottom-0 left-0 w-[262px] h-[180px] opacity-0 animate-fade-in-up delay-400 overflow-hidden bg-white"
+              className="absolute bottom-0 left-0 w-65.5 h-45 opacity-0 animate-fade-in-up delay-400 overflow-hidden bg-white"
               style={{
                 borderTopLeftRadius: '90.5px',
                 borderTopRightRadius: 0,
