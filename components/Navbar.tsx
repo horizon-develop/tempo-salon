@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav className="absolute top-0 left-0 right-0 z-50">
       {/* Top Bar - Social icons and address */}
       <div className="bg-transparent pt-2.25">
         <div className="flex items-center justify-between text-white/80 text-xs pl-20 pr-27.25 pb-2.25">
