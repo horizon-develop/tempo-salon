@@ -27,7 +27,7 @@ export default function ResultsSection() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
+    queueMicrotask(onSelect);
     emblaApi.on("select", onSelect);
     return () => {
       emblaApi.off("select", onSelect);
