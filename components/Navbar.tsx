@@ -63,7 +63,7 @@ export default function Navbar() {
                   <span className="nav-line-small"></span>
                 </span>
               </a>
-              <a href="#services" className="nav-link-hover text-[14px] font-normal text-white/80">
+              <a href="#results" className="nav-link-hover text-[14px] font-normal text-white/80">
                 Servicios
                 <span className="nav-link-underline">
                   <span className="nav-line-large"></span>
@@ -77,7 +77,7 @@ export default function Navbar() {
                   <span className="nav-line-small"></span>
                 </span>
               </a>
-              <a href="#contact" className="nav-link-hover text-[14px] font-normal text-white/80">
+              <a href="#footer" className="nav-link-hover text-[14px] font-normal text-white/80">
                 Contacto
                 <span className="nav-link-underline">
                   <span className="nav-line-large"></span>
