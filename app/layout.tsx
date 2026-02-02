@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "TEMPO Atelier | Tu Estilo, Nuestra Pasión",
   description: "Peluquería unisex en Corrientes, Argentina. Cortes masculinos, hidratación y brushing. Una experiencia personalizada en un ambiente elegante y sofisticado.",
   keywords: ["peluquería", "corrientes", "corte de pelo", "unisex", "tempo atelier", "hidratación", "brushing"],
+  appleWebApp: {
+    title: "Tempo Atelier",
+  },
   openGraph: {
     title: "TEMPO Atelier | Tu Estilo, Nuestra Pasión",
     description: "Peluquería unisex en Corrientes, Argentina. Una experiencia personalizada en un ambiente elegante.",
