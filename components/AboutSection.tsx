@@ -3,26 +3,29 @@ import Image from "next/image";
 export default function AboutSection() {
   return (
     <section className="relative">
-      <div className="grid lg:grid-cols-2">
+      <div className="flex flex-col lg:flex-row">
         {/* Left - Image */}
-        <div className="relative h-80 lg:h-125 bg-white flex items-center justify-center">
-          <div className="w-64 h-72 lg:w-80 lg:h-96 bg-neutral-200 overflow-hidden">
-            <Image
-              src="/no image.jpg"
-              alt="Sobre Nosotros"
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="relative h-82.5 lg:h-132.5 lg:w-[58%] bg-neutral-100 flex items-center justify-center">
+          <Image
+            src="/no image.jpg"
+            alt="Sobre Nosotros"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Right - Content */}
-        <div className="bg-[#BE8F45] px-8 lg:px-16 py-16 lg:py-20 flex flex-col justify-center">
+        <div
+          className="px-8 py-12 lg:pl-25 lg:pr-12 lg:pb-29.25 lg:w-[42%] lg:h-132.5 flex flex-col justify-center"
+          style={{
+            background: "linear-gradient(135deg, #C39246 6%, #D1A96A 41%, #E5BC7A 77%, #E1BB80 100%)",
+          }}
+        >
           <h2 className="font-(--font-display) text-3xl lg:text-4xl text-white mb-6">
             Sobre Nosotros
           </h2>
 
-          <p className="text-white/80 text-sm lg:text-base leading-relaxed mb-8 max-w-md">
+          <p className="text-white/80 text-sm lg:text-base leading-relaxed mb-20 max-w-92.75">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Fermentum leo vel orci porta non.
           </p>
@@ -32,11 +35,10 @@ export default function AboutSection() {
               href="https://shelbyturnos.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-white text-white text-xs font-medium tracking-[0.15em] uppercase hover:bg-white hover:text-gold-dark transition-all duration-300"
+              className="btn-reservar bg-white! text-charcoal! border-[#BE8F45]! hover:bg-neutral-100!"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+              <span className="btn-corner btn-corner-tr"></span>
+              <span className="btn-corner btn-corner-bl"></span>
               Reservar
             </a>
           </div>
