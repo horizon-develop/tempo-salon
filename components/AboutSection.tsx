@@ -18,7 +18,7 @@ export default function AboutSection() {
         <div
           className="px-8 py-12 lg:pl-25 lg:pr-12 lg:pb-29.25 lg:w-[42%] lg:h-132.5 flex flex-col justify-center"
           style={{
-            background: "linear-gradient(135deg, #C39246 6%, #D1A96A 41%, #E5BC7A 77%, #E1BB80 100%)",
+            background: "linear-gradient(135deg, #2c2b2a 0%, #393837 40%, #4a4948 70%, #393837 100%)",
           }}
         >
           <h2 className="font-(--font-display) text-3xl lg:text-4xl text-white mb-6">
@@ -35,7 +35,7 @@ export default function AboutSection() {
               href="https://shelbyturnos.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-reservar bg-white! text-charcoal! border-[#BE8F45]! hover:bg-neutral-100!"
+              className="btn-reservar bg-white! text-charcoal! border-ash-gray! hover:bg-silver-gray!"
             >
               <span className="btn-corner btn-corner-tr"></span>
               <span className="btn-corner btn-corner-bl"></span>

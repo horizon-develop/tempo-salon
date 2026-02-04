@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
       <AboutSection />

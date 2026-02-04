@@ -47,8 +47,8 @@ export default function ResultsSection() {
         {/* Section Header */}
         <div className="mb-12">
           <h2 className="font-(--font-display) text-3xl lg:text-4xl mb-4">
-            <span className="text-black font-medium">Nuestros </span>
-            <span className="text-[#BE8F45] italic">Resultados</span>
+            <span className="text-charcoal font-medium">Nuestros </span>
+            <span className="text-ash-gray italic">Resultados</span>
           </h2>
           <div className="h-px bg-neutral-200 w-full" />
         </div>
@@ -94,7 +94,7 @@ export default function ResultsSection() {
               onClick={() => scrollTo(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 selectedIndex === index
-                  ? "bg-gold w-3"
+                  ? "bg-charcoal w-3"
                   : "bg-neutral-300 hover:bg-neutral-400"
               }`}
               aria-label={`Ir a slide ${index + 1}`}

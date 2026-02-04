@@ -3,11 +3,8 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/background.png)' }}
-      />
+      {/* Background gradient + grain */}
+      <div className="absolute inset-0 bg-dark-gradient grain-overlay" />
 
       {/* Content */}
       <div className="relative z-10 w-full px-20 pt-32 pb-27.75 h-screen flex items-center">
@@ -19,7 +16,7 @@ export default function Hero() {
                 <span className="block font-(--font-display) text-[40px] md:text-[50px] lg:text-[60px] text-white leading-[1.1]">
                   Tu Estilo Personal
                 </span>
-                <span className="block font-(--font-display) text-[60px] md:text-[75px] lg:text-[90px] italic text-[#BE8F45] leading-[1.1] whitespace-nowrap">
+                <span className="block font-(--font-display) text-[60px] md:text-[75px] lg:text-[90px] italic text-silver-gray leading-[1.1] whitespace-nowrap">
                   Nuestra Pasión
                 </span>
               </h1>

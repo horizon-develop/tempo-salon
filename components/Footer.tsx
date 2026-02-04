@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-linear-to-br from-[#3d3225] via-[#4a3c2a] to-[#5a4a35]">
+    <footer id="footer" className="bg-linear-to-br from-[#2c2b2a] via-[#393837] to-[#4a4948]">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
         <div className="grid md:grid-cols-3 gap-12 items-start">
           {/* Contact Column */}
           <div className="text-center md:text-left">
-            <h3 className="text-gold font-medium mb-4 underline underline-offset-4 decoration-gold">
+            <h3 className="text-silver-gray font-medium mb-4 underline underline-offset-4 decoration-silver-gray">
               Contacto
             </h3>
             <div className="space-y-2 text-white/70 text-sm">
@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* Working Hours Column */}
           <div className="text-center md:text-right">
-            <h3 className="text-gold font-medium mb-4 underline underline-offset-4 decoration-gold">
+            <h3 className="text-silver-gray font-medium mb-4 underline underline-offset-4 decoration-silver-gray">
               Horario
             </h3>
             <div className="space-y-2 text-white/70 text-sm">
@@ -46,7 +46,7 @@ export default function Footer() {
               Desarrollado por{" "}
               <a
                 href="https://alankke.github.io/" target="_blank" rel="noopener noreferrer"
-                className="text-gold hover:text-(--gold)/80 transition-colors"
+                className="text-silver-gray hover:text-ash-gray transition-colors"
               >
                 Alan Kennedy
               </a>

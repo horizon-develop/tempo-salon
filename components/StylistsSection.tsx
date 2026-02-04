@@ -6,7 +6,7 @@ export default function StylistsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="font-(--font-display) text-3xl lg:text-4xl text-black mb-4">
+          <h2 className="font-(--font-display) text-3xl lg:text-4xl text-charcoal mb-4">
             Conoce A Nuestros Estilistas
           </h2>
           <div className="h-px bg-neutral-200 w-full" />
