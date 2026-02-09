@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-linear-to-br from-[#2c2b2a] via-[#393837] to-[#4a4948]">
+    <footer id="footer" className="bg-linear-to-br from-[#8a8787] via-[#9B9898] to-[#a8a5a5]">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
         <div className="grid md:grid-cols-3 gap-12 items-start">

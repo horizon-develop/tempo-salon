@@ -18,7 +18,7 @@ export default function AboutSection() {
         <div
           className="px-8 py-12 lg:pl-25 lg:pr-12 lg:pb-29.25 lg:w-[42%] lg:h-132.5 flex flex-col justify-center"
           style={{
-            background: "linear-gradient(135deg, #2c2b2a 0%, #393837 40%, #4a4948 70%, #393837 100%)",
+            background: "linear-gradient(135deg, #8a8787 0%, #9B9898 40%, #a8a5a5 70%, #9B9898 100%)",
           }}
         >
           <h2 className="font-(--font-display) text-3xl lg:text-4xl text-white mb-6">
