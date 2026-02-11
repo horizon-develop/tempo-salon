@@ -112,7 +112,7 @@ export default function DetailsStep({
           <div>
             <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal/60 font-medium mb-2">
               <User className="w-3.5 h-3.5" />
-              Nombre completo *
+              Nombre completo <span className="text-red-500 font-bold">*</span>
             </label>
             <input
               type="text"
@@ -141,7 +141,7 @@ export default function DetailsStep({
           <div>
             <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal/60 font-medium mb-2">
               <Phone className="w-3.5 h-3.5" />
-              Telefono *
+              Teléfono <span className="text-red-500 font-bold">*</span>
             </label>
             <input
               type="tel"

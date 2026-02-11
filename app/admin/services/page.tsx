@@ -252,7 +252,7 @@ export default function ServicesPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Nombre</label>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Nombre <span className="text-red-500 font-bold">*</span></label>
                 <input
                   type="text"
                   value={form.name}
@@ -273,7 +273,7 @@ export default function ServicesPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Precio (en pesos)</label>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Precio (en pesos) <span className="text-red-500 font-bold">*</span></label>
                 <input
                   type="number"
                   step="0.01"
@@ -286,7 +286,7 @@ export default function ServicesPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Duración (minutos)</label>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Duración (minutos) <span className="text-red-500 font-bold">*</span></label>
                 <input
                   type="number"
                   min="15"

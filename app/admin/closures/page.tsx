@@ -154,7 +154,7 @@ export default function ClosuresPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Fecha</label>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Fecha <span className="text-red-500 font-bold">*</span></label>
                 <input
                   type="date"
                   value={form.date}
@@ -191,7 +191,7 @@ export default function ClosuresPage() {
             {!form.allDay && (
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">Desde</label>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Desde <span className="text-red-500 font-bold">*</span></label>
                   <input
                     type="time"
                     value={form.startTime}
@@ -201,7 +201,7 @@ export default function ClosuresPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">Hasta</label>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Hasta <span className="text-red-500 font-bold">*</span></label>
                   <input
                     type="time"
                     value={form.endTime}

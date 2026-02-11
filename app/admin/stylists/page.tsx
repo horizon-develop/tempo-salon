@@ -181,7 +181,7 @@ export default function StylistsPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Nombre</label>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Nombre <span className="text-red-500 font-bold">*</span></label>
                 <input
                   type="text"
                   value={form.name}
@@ -251,7 +251,7 @@ export default function StylistsPage() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-charcoal/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-charcoal/10 flex items-center justify-center shrink-0">
                     <span className="text-sm font-semibold text-charcoal">
                       {stylist.name.charAt(0).toUpperCase()}
                     </span>
@@ -284,7 +284,7 @@ export default function StylistsPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 flex-shrink-0">
+                <div className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={() => toggleActive(stylist)}
                     className="text-gray-400 hover:text-gray-600 transition-colors"

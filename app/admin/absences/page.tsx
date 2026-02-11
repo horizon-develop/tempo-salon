@@ -195,7 +195,7 @@ export default function AbsencesPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Estilista</label>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Estilista <span className="text-red-500 font-bold">*</span></label>
                 <select
                   value={form.stylistId}
                   onChange={(e) => setForm((f) => ({ ...f, stylistId: e.target.value }))}
@@ -211,7 +211,7 @@ export default function AbsencesPage() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Fecha</label>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Fecha <span className="text-red-500 font-bold">*</span></label>
                 <input
                   type="date"
                   value={form.date}
@@ -248,7 +248,7 @@ export default function AbsencesPage() {
             {!form.allDay && (
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">Desde</label>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Desde <span className="text-red-500 font-bold">*</span></label>
                   <input
                     type="time"
                     value={form.startTime}
@@ -258,7 +258,7 @@ export default function AbsencesPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">Hasta</label>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Hasta <span className="text-red-500 font-bold">*</span></label>
                   <input
                     type="time"
                     value={form.endTime}
