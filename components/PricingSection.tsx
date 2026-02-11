@@ -1,12 +1,30 @@
-const prices = [
-  { service: "Balayage", price: "$35" },
-  { service: "Corte Masculino", price: "$35" },
-  { service: "Brushing", price: "$35" },
-  { service: "Corte Masculino Y Barba", price: "$35" },
-  { service: "Reflejos", price: "$35" },
-];
+import { prisma } from "@/lib/prisma";
 
-export default function PricingSection() {
+function formatPrice(cents: number): string {
+  const pesos = Math.floor(cents / 100);
+  return `$${pesos.toLocaleString("es-AR")}`;
+}
+
+export default async function PricingSection() {
+  let services: { id: string; name: string; price: number }[] = [];
+
+  try {
+    services = await prisma.service.findMany({
+      where: { isActive: true },
+      select: { id: true, name: true, price: true },
+      orderBy: { order: "asc" },
+    });
+  } catch {
+    // Fallback if DB is not connected yet
+    services = [
+      { id: "1", name: "Balayage", price: 8000 },
+      { id: "2", name: "Corte Masculino", price: 3500 },
+      { id: "3", name: "Brushing", price: 3500 },
+      { id: "4", name: "Corte Masculino y Barba", price: 5000 },
+      { id: "5", name: "Reflejos", price: 6000 },
+    ];
+  }
+
   return (
     <section id="precios" className="relative h-screen overflow-hidden">
       <div className="absolute inset-0 bg-dark-gradient grain-overlay" />
@@ -19,21 +37,19 @@ export default function PricingSection() {
 
         {/* Price List */}
         <div className="space-y-4">
-          {prices.map((item, index) => (
+          {services.map((item) => (
             <a
-              key={index}
-              href={`https://shelbyturnos.vercel.app/?service=${encodeURIComponent(item.service)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              key={item.id}
+              href={`/reservar?service=${item.id}`}
               className="block py-3 group cursor-pointer"
             >
               <div className="flex items-center justify-between">
                 <span className="text-white font-medium text-sm lg:text-base group-hover:text-silver-gray transition-colors duration-300">
-                  {item.service}
+                  {item.name}
                 </span>
                 <div className="relative">
                   <span className="text-silver-gray font-semibold text-sm lg:text-base group-hover:opacity-0 transition-opacity duration-300">
-                    {item.price}
+                    {formatPrice(item.price)}
                   </span>
                   <span className="absolute right-0 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full border border-silver-gray flex items-center justify-center text-silver-gray opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

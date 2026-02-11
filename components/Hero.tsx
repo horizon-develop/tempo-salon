@@ -24,9 +24,7 @@ export default function Hero() {
 
             <div className="opacity-0 animate-fade-in-up delay-200 mt-27.75">
               <a
-                href="https://shelbyturnos.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/reservar"
                 className="btn-reservar"
               >
                 <span className="btn-corner btn-corner-tr"></span>

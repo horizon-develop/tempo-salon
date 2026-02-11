@@ -56,7 +56,7 @@ export default function Navbar() {
                   <span className="nav-line-small"></span>
                 </span>
               </a>
-              <a href="https://shelbyturnos.vercel.app/" target="_blank" rel="noopener noreferrer" className="nav-link-hover text-[14px] font-normal text-white/80">
+              <a href="/reservar" className="nav-link-hover text-[14px] font-normal text-white/80">
                 Reservar ahora
                 <span className="nav-link-underline">
                   <span className="nav-line-large"></span>

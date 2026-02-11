@@ -32,9 +32,7 @@ export default function AboutSection() {
 
           <div>
             <a
-              href="https://shelbyturnos.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/reservar"
               className="btn-reservar bg-white! text-charcoal! border-ash-gray! hover:bg-silver-gray!"
             >
               <span className="btn-corner btn-corner-tr"></span>
