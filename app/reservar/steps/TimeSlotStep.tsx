@@ -61,7 +61,7 @@ export default function TimeSlotStep({
     return (
       <div className="flex flex-col items-center justify-center py-20">
         <Loader2 className="w-8 h-8 text-charcoal animate-spin" />
-        <p className="mt-4 text-sm text-charcoal/60 tracking-wide">Cargando horarios...</p>
+        <p className="mt-4 text-sm text-charcoal tracking-wide">Cargando horarios...</p>
       </div>
     );
   }
@@ -69,7 +69,7 @@ export default function TimeSlotStep({
   if (error) {
     return (
       <div className="text-center py-20">
-        <p className="text-charcoal/70 text-sm">{error}</p>
+        <p className="text-charcoal text-sm">{error}</p>
       </div>
     );
   }
@@ -77,11 +77,11 @@ export default function TimeSlotStep({
   if (slots.length === 0) {
     return (
       <div className="animate-fade-in text-center py-20">
-        <Clock className="w-10 h-10 text-charcoal/20 mx-auto mb-4" />
-        <p className="text-charcoal/60 text-sm">
+        <Clock className="w-10 h-10 text-charcoal mx-auto mb-4" />
+        <p className="text-charcoal text-sm">
           No hay horarios disponibles para esta fecha.
         </p>
-        <p className="text-charcoal/40 text-xs mt-2">
+        <p className="text-charcoal text-xs mt-2">
           Probá seleccionando otro dia.
         </p>
       </div>
@@ -114,7 +114,7 @@ export default function TimeSlotStep({
         <h2 className="font-(--font-display) text-2xl lg:text-3xl text-charcoal mb-2">
           Elegí el horario
         </h2>
-        <p className="text-charcoal/50 text-sm tracking-wide capitalize">
+        <p className="text-charcoal text-sm tracking-wide capitalize">
           {formatDisplayDate(date)}
         </p>
       </div>
@@ -122,7 +122,7 @@ export default function TimeSlotStep({
       <div className="max-w-2xl mx-auto space-y-8">
         {groups.map((group) => (
           <div key={group.label}>
-            <h3 className="text-xs uppercase tracking-[0.2em] text-charcoal/40 font-medium mb-3 ml-1">
+            <h3 className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium mb-3 ml-1">
               {group.label}
             </h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">

@@ -61,7 +61,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
     return (
       <div className="flex flex-col items-center justify-center py-20">
         <Loader2 className="w-8 h-8 text-charcoal animate-spin" />
-        <p className="mt-4 text-sm text-charcoal/60 tracking-wide">Cargando servicios...</p>
+        <p className="mt-4 text-sm text-charcoal tracking-wide">Cargando servicios...</p>
       </div>
     );
   }
@@ -69,7 +69,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
   if (error) {
     return (
       <div className="text-center py-20">
-        <p className="text-charcoal/70 text-sm">{error}</p>
+        <p className="text-charcoal text-sm">{error}</p>
         <button
           onClick={() => window.location.reload()}
           className="mt-4 btn-outline text-xs"
@@ -86,7 +86,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
         <h2 className="font-(--font-display) text-2xl lg:text-3xl text-charcoal mb-2">
           Elegí tu servicio
         </h2>
-        <p className="text-charcoal/50 text-sm tracking-wide">
+        <p className="text-charcoal text-sm tracking-wide">
           Seleccioná el servicio que deseas reservar
         </p>
       </div>
@@ -127,7 +127,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
 
               {/* Service name */}
               <div className="flex items-start gap-3 mb-3 pr-8">
-                <Scissors className="w-4 h-4 text-charcoal/40 mt-1 shrink-0" />
+                <Scissors className="w-4 h-4 text-charcoal mt-1 shrink-0" />
                 <h3 className="font-medium text-charcoal text-base tracking-wide">
                   {service.name}
                 </h3>
@@ -135,7 +135,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
 
               {/* Description */}
               {service.description && (
-                <p className="text-charcoal/50 text-xs mb-4 ml-7 line-clamp-2">
+                <p className="text-charcoal text-xs mb-4 ml-7 line-clamp-2">
                   {service.description}
                 </p>
               )}
@@ -146,7 +146,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
                   <span className="text-charcoal font-semibold text-lg">
                     {formatPrice(service.price)}
                   </span>
-                  <span className="flex items-center gap-1 text-charcoal/40 text-xs">
+                  <span className="flex items-center gap-1 text-charcoal text-xs">
                     <Clock className="w-3.5 h-3.5" />
                     {formatDuration(service.duration)}
                   </span>
@@ -156,7 +156,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
               {/* Stylists */}
               {service.stylists.length > 0 && (
                 <div className="mt-3 ml-7">
-                  <p className="text-[10px] text-charcoal/30 uppercase tracking-widest">
+                  <p className="text-[10px] text-charcoal uppercase tracking-widest">
                     {service.stylists.map((s) => s.name).join(" / ")}
                   </p>
                 </div>

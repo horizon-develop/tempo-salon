@@ -37,7 +37,7 @@ export default function StepIndicator({ currentStep, totalSteps }: StepIndicator
                       ? "bg-charcoal text-white scale-90"
                       : isCurrent
                         ? "bg-charcoal text-white ring-4 ring-ash-gray/30 scale-110"
-                        : "bg-silver-gray text-charcoal/50"
+                        : "bg-silver-gray text-charcoal"
                     }
                   `}
                 >
@@ -51,7 +51,7 @@ export default function StepIndicator({ currentStep, totalSteps }: StepIndicator
                   className={`
                     mt-2 text-[10px] tracking-wider uppercase font-medium
                     transition-colors duration-300 hidden sm:block
-                    ${isCurrent ? "text-charcoal" : isCompleted ? "text-charcoal/60" : "text-charcoal/30"}
+                    ${isCurrent ? "text-charcoal" : isCompleted ? "text-charcoal" : "text-charcoal"}
                   `}
                 >
                   {stepLabels[i]}

@@ -22,7 +22,7 @@ export default function ReservarPage() {
         <div className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
             <div className="w-8 h-8 border-2 border-charcoal/20 border-t-charcoal rounded-full animate-spin mx-auto" />
-            <p className="mt-4 text-sm text-charcoal/50 tracking-wide">
+            <p className="mt-4 text-sm text-charcoal tracking-wide">
               Cargando...
             </p>
           </div>

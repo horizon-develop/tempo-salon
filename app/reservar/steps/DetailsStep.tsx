@@ -100,7 +100,7 @@ export default function DetailsStep({
         <h2 className="font-(--font-display) text-2xl lg:text-3xl text-charcoal mb-2">
           Tus datos
         </h2>
-        <p className="text-charcoal/50 text-sm tracking-wide">
+        <p className="text-charcoal text-sm tracking-wide">
           Completa tus datos para confirmar la reserva
         </p>
       </div>
@@ -110,7 +110,7 @@ export default function DetailsStep({
         <form onSubmit={handleSubmit} className="flex-1 space-y-5">
           {/* Name */}
           <div>
-            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal/60 font-medium mb-2">
+            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal font-medium mb-2">
               <User className="w-3.5 h-3.5" />
               Nombre completo <span className="text-red-500 font-bold">*</span>
             </label>
@@ -139,7 +139,7 @@ export default function DetailsStep({
 
           {/* Phone */}
           <div>
-            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal/60 font-medium mb-2">
+            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal font-medium mb-2">
               <Phone className="w-3.5 h-3.5" />
               Teléfono <span className="text-red-500 font-bold">*</span>
             </label>
@@ -168,7 +168,7 @@ export default function DetailsStep({
 
           {/* Email */}
           <div>
-            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal/60 font-medium mb-2">
+            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal font-medium mb-2">
               <Mail className="w-3.5 h-3.5" />
               Email (opcional)
             </label>
@@ -197,7 +197,7 @@ export default function DetailsStep({
 
           {/* Notes */}
           <div>
-            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal/60 font-medium mb-2">
+            <label className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-charcoal font-medium mb-2">
               <MessageSquare className="w-3.5 h-3.5" />
               Notas (opcional)
             </label>
@@ -255,24 +255,24 @@ export default function DetailsStep({
 function SummaryCard({ summary }: { summary: BookingSummary }) {
   return (
     <div className="border border-ash-gray/50 rounded-sm p-6 bg-silver-gray/20">
-      <h3 className="text-xs uppercase tracking-[0.2em] text-charcoal/50 font-medium mb-5">
+      <h3 className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium mb-5">
         Resumen de tu reserva
       </h3>
 
       <div className="space-y-4">
         {summary.serviceName && (
           <div className="flex items-start gap-3">
-            <Scissors className="w-4 h-4 text-charcoal/40 mt-0.5 shrink-0" />
+            <Scissors className="w-4 h-4 text-charcoal mt-0.5 shrink-0" />
             <div>
               <p className="text-sm font-medium text-charcoal">{summary.serviceName}</p>
               <div className="flex items-center gap-3 mt-0.5">
                 {summary.servicePrice !== null && (
-                  <span className="text-xs text-charcoal/60">
+                  <span className="text-xs text-charcoal">
                     {formatPrice(summary.servicePrice)}
                   </span>
                 )}
                 {summary.serviceDuration !== null && (
-                  <span className="text-xs text-charcoal/40">
+                  <span className="text-xs text-charcoal">
                     {formatDuration(summary.serviceDuration)}
                   </span>
                 )}
@@ -283,14 +283,14 @@ function SummaryCard({ summary }: { summary: BookingSummary }) {
 
         {summary.stylistName && (
           <div className="flex items-center gap-3">
-            <User className="w-4 h-4 text-charcoal/40 shrink-0" />
+            <User className="w-4 h-4 text-charcoal shrink-0" />
             <p className="text-sm text-charcoal">{summary.stylistName}</p>
           </div>
         )}
 
         {summary.date && (
           <div className="flex items-start gap-3">
-            <Calendar className="w-4 h-4 text-charcoal/40 mt-0.5 shrink-0" />
+            <Calendar className="w-4 h-4 text-charcoal mt-0.5 shrink-0" />
             <p className="text-sm text-charcoal capitalize">
               {formatDisplayDate(summary.date)}
             </p>
@@ -299,7 +299,7 @@ function SummaryCard({ summary }: { summary: BookingSummary }) {
 
         {summary.startTime && (
           <div className="flex items-center gap-3">
-            <Clock className="w-4 h-4 text-charcoal/40 shrink-0" />
+            <Clock className="w-4 h-4 text-charcoal shrink-0" />
             <p className="text-sm text-charcoal">{summary.startTime} hs</p>
           </div>
         )}
@@ -309,7 +309,7 @@ function SummaryCard({ summary }: { summary: BookingSummary }) {
         <>
           <div className="silver-line my-5" />
           <div className="flex items-center justify-between">
-            <span className="text-xs uppercase tracking-[0.15em] text-charcoal/50 font-medium">
+            <span className="text-xs uppercase tracking-[0.15em] text-charcoal font-medium">
               Total
             </span>
             <span className="text-lg font-semibold text-charcoal">

@@ -320,7 +320,7 @@ export default function BookingWizard() {
             TEMPO
           </a>
           {state.step < 6 && (
-            <span className="text-[10px] uppercase tracking-[0.2em] text-charcoal/40 font-medium">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-charcoal font-medium">
               Reservar turno
             </span>
           )}
@@ -341,7 +341,7 @@ export default function BookingWizard() {
             onClick={() => dispatch({ type: "GO_BACK" })}
             className="
               flex items-center gap-2 text-xs uppercase tracking-[0.15em]
-              text-charcoal/50 hover:text-charcoal transition-colors duration-300 cursor-pointer
+              text-charcoal hover:text-charcoal transition-colors duration-300 cursor-pointer
             "
           >
             <ArrowLeft className="w-4 h-4" />
@@ -487,7 +487,7 @@ function StepContent({ state, handlers }: StepContentProps) {
 function DesktopSummary({ state }: { state: BookingState }) {
   return (
     <div className="border border-ash-gray/40 rounded-sm p-5 bg-silver-gray/10 animate-fade-in">
-      <h3 className="text-[10px] uppercase tracking-[0.2em] text-charcoal/40 font-medium mb-4">
+      <h3 className="text-[10px] uppercase tracking-[0.2em] text-charcoal font-medium mb-4">
         Tu reserva
       </h3>
 
@@ -495,7 +495,7 @@ function DesktopSummary({ state }: { state: BookingState }) {
         {state.serviceName && (
           <div>
             <p className="text-charcoal font-medium">{state.serviceName}</p>
-            <p className="text-xs text-charcoal/40 mt-0.5">
+            <p className="text-xs text-charcoal mt-0.5">
               {state.servicePrice !== null && formatPriceSidebar(state.servicePrice)}
               {state.servicePrice !== null && state.serviceDuration !== null && " · "}
               {state.serviceDuration !== null && formatDurationSidebar(state.serviceDuration)}
@@ -505,7 +505,7 @@ function DesktopSummary({ state }: { state: BookingState }) {
 
         {state.stylistName && (
           <div className="pt-2 border-t border-ash-gray/30">
-            <p className="text-[10px] uppercase tracking-[0.15em] text-charcoal/30 mb-1">
+            <p className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-1">
               Estilista
             </p>
             <p className="text-charcoal">{state.stylistName}</p>
@@ -514,7 +514,7 @@ function DesktopSummary({ state }: { state: BookingState }) {
 
         {state.date && (
           <div className="pt-2 border-t border-ash-gray/30">
-            <p className="text-[10px] uppercase tracking-[0.15em] text-charcoal/30 mb-1">
+            <p className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-1">
               Fecha
             </p>
             <p className="text-charcoal capitalize">
@@ -525,7 +525,7 @@ function DesktopSummary({ state }: { state: BookingState }) {
 
         {state.startTime && (
           <div className="pt-2 border-t border-ash-gray/30">
-            <p className="text-[10px] uppercase tracking-[0.15em] text-charcoal/30 mb-1">
+            <p className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-1">
               Horario
             </p>
             <p className="text-charcoal">{state.startTime} hs</p>

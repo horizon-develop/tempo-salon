@@ -90,7 +90,7 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
     return (
       <div className="flex flex-col items-center justify-center py-20">
         <Loader2 className="w-8 h-8 text-charcoal animate-spin" />
-        <p className="mt-4 text-sm text-charcoal/60 tracking-wide">Cargando disponibilidad...</p>
+        <p className="mt-4 text-sm text-charcoal tracking-wide">Cargando disponibilidad...</p>
       </div>
     );
   }
@@ -98,7 +98,7 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
   if (error) {
     return (
       <div className="text-center py-20">
-        <p className="text-charcoal/70 text-sm">{error}</p>
+        <p className="text-charcoal text-sm">{error}</p>
       </div>
     );
   }
@@ -109,7 +109,7 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
         <h2 className="font-(--font-display) text-2xl lg:text-3xl text-charcoal mb-2">
           Elegí la fecha
         </h2>
-        <p className="text-charcoal/50 text-sm tracking-wide">
+        <p className="text-charcoal text-sm tracking-wide">
           Los dias habilitados tienen turnos disponibles
         </p>
       </div>
@@ -148,16 +148,16 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
 
       <style>{`
         .rdp-tempo {
-          --rdp-accent-color: #9B9898;
-          --rdp-accent-background-color: #F5F4F4;
+          --rdp-accent-color: #212529;
+          --rdp-accent-background-color: #F8F9FA;
           --rdp-day-height: 44px;
           --rdp-day-width: 44px;
           font-family: var(--font-body);
         }
 
         .rdp-tempo .rdp-root {
-          --rdp-accent-color: #9B9898;
-          --rdp-accent-background-color: #F5F4F4;
+          --rdp-accent-color: #212529;
+          --rdp-accent-background-color: #F8F9FA;
         }
 
         .rdp-tempo .rdp-month_caption {
@@ -165,17 +165,17 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
           text-transform: capitalize;
           font-size: 0.95rem;
           letter-spacing: 0.05em;
-          color: #9B9898;
+          color: #212529;
         }
 
         .rdp-tempo .rdp-button_next,
         .rdp-tempo .rdp-button_previous {
-          color: #9B9898;
+          color: #212529;
         }
 
         .rdp-tempo .rdp-button_next:hover,
         .rdp-tempo .rdp-button_previous:hover {
-          background-color: #F5F4F4;
+          background-color: #F8F9FA;
         }
 
         .rdp-tempo .rdp-weekday {
@@ -183,7 +183,7 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          color: #9B9898;
+          color: #212529;
         }
 
         .rdp-tempo .rdp-day button {
@@ -194,11 +194,11 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
         }
 
         .rdp-tempo .rdp-day button:hover:not(:disabled) {
-          background-color: #E8E5E5;
+          background-color: #DEE2E6;
         }
 
         .rdp-tempo .rdp-selected .rdp-day_button {
-          background-color: #9B9898;
+          background-color: #212529;
           color: white;
           font-weight: 500;
         }
@@ -210,12 +210,12 @@ export default function DateStep({ serviceId, stylistId, selectedDate, onSelect 
 
         .rdp-tempo .rdp-day-available .rdp-day_button:not(.rdp-selected .rdp-day_button) {
           font-weight: 500;
-          color: #333;
+          color: #212529;
         }
 
         .rdp-tempo .rdp-today:not(.rdp-selected) .rdp-day_button {
           font-weight: 700;
-          border: 1px solid #E8E5E5;
+          border: 1px solid #DEE2E6;
         }
       `}</style>
     </div>

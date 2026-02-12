@@ -86,14 +86,14 @@ export default function ConfirmationStep({
       <h2 className="font-(--font-display) text-2xl lg:text-3xl text-charcoal mb-2">
         Reserva confirmada
       </h2>
-      <p className="text-charcoal/50 text-sm tracking-wide mb-8">
+      <p className="text-charcoal text-sm tracking-wide mb-8">
         Tu turno fue reservado con exito
       </p>
 
       {/* Booking ID */}
       <div className="bg-silver-gray/40 border border-ash-gray/40 rounded-sm p-4 mb-8 inline-flex items-center gap-3">
         <div>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-charcoal/40 font-medium">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-charcoal font-medium">
             Codigo de reserva
           </p>
           <p className="text-sm font-mono font-semibold text-charcoal mt-0.5">
@@ -108,7 +108,7 @@ export default function ConfirmationStep({
           {copied ? (
             <Check className="w-4 h-4 text-charcoal" />
           ) : (
-            <Copy className="w-4 h-4 text-charcoal/40" />
+            <Copy className="w-4 h-4 text-charcoal" />
           )}
         </button>
       </div>
@@ -118,17 +118,17 @@ export default function ConfirmationStep({
         <div className="space-y-4">
           {serviceName && (
             <div className="flex items-start gap-3">
-              <Scissors className="w-4 h-4 text-charcoal/40 mt-0.5 shrink-0" />
+              <Scissors className="w-4 h-4 text-charcoal mt-0.5 shrink-0" />
               <div>
                 <p className="text-sm font-medium text-charcoal">{serviceName}</p>
                 <div className="flex items-center gap-3 mt-0.5">
                   {servicePrice !== null && (
-                    <span className="text-xs text-charcoal/60">
+                    <span className="text-xs text-charcoal">
                       {formatPrice(servicePrice)}
                     </span>
                   )}
                   {serviceDuration !== null && (
-                    <span className="text-xs text-charcoal/40">
+                    <span className="text-xs text-charcoal">
                       {formatDuration(serviceDuration)}
                     </span>
                   )}
@@ -139,14 +139,14 @@ export default function ConfirmationStep({
 
           {stylistName && (
             <div className="flex items-center gap-3">
-              <User className="w-4 h-4 text-charcoal/40 shrink-0" />
+              <User className="w-4 h-4 text-charcoal shrink-0" />
               <p className="text-sm text-charcoal">{stylistName}</p>
             </div>
           )}
 
           {date && (
             <div className="flex items-start gap-3">
-              <Calendar className="w-4 h-4 text-charcoal/40 mt-0.5 shrink-0" />
+              <Calendar className="w-4 h-4 text-charcoal mt-0.5 shrink-0" />
               <p className="text-sm text-charcoal capitalize">
                 {formatDisplayDate(date)}
               </p>
@@ -155,7 +155,7 @@ export default function ConfirmationStep({
 
           {startTime && (
             <div className="flex items-center gap-3">
-              <Clock className="w-4 h-4 text-charcoal/40 shrink-0" />
+              <Clock className="w-4 h-4 text-charcoal shrink-0" />
               <p className="text-sm text-charcoal">{startTime} hs</p>
             </div>
           )}

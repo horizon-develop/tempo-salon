@@ -146,7 +146,7 @@ export default function SchedulePage() {
                 <h3 className="text-sm font-semibold text-gray-800">{day.label}</h3>
                 <button
                   onClick={() => addBlock(day.key)}
-                  className="inline-flex items-center gap-1 text-xs text-charcoal hover:text-charcoal/80 transition-colors"
+                  className="inline-flex items-center gap-1 text-xs text-charcoal hover:text-charcoal transition-colors"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   Agregar bloque

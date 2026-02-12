@@ -48,7 +48,7 @@ export default function ResultsSection() {
         <div className="mb-12">
           <h2 className="font-(--font-display) text-3xl lg:text-4xl mb-4">
             <span className="text-charcoal font-medium">Nuestros </span>
-            <span className="text-ash-gray italic">Resultados</span>
+            <span className="text-charcoal italic">Resultados</span>
           </h2>
           <div className="h-px bg-neutral-200 w-full" />
         </div>

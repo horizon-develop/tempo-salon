@@ -27,7 +27,7 @@ export default function StylistStep({ stylists, selectedStylistId, onSelect }: S
   if (stylists.length === 1) {
     return (
       <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
-        <p className="text-sm text-charcoal/60 tracking-wide">Seleccionando estilista...</p>
+        <p className="text-sm text-charcoal tracking-wide">Seleccionando estilista...</p>
       </div>
     );
   }
@@ -38,7 +38,7 @@ export default function StylistStep({ stylists, selectedStylistId, onSelect }: S
         <h2 className="font-(--font-display) text-2xl lg:text-3xl text-charcoal mb-2">
           Elegí tu estilista
         </h2>
-        <p className="text-charcoal/50 text-sm tracking-wide">
+        <p className="text-charcoal text-sm tracking-wide">
           Seleccioná con quién querés atenderte
         </p>
       </div>
@@ -69,7 +69,7 @@ export default function StylistStep({ stylists, selectedStylistId, onSelect }: S
                   transition-all duration-500
                   ${isSelected
                     ? "bg-charcoal text-white"
-                    : "bg-silver-gray text-charcoal/40 group-hover:bg-ash-gray group-hover:text-charcoal/60"
+                    : "bg-silver-gray text-charcoal group-hover:bg-ash-gray group-hover:text-charcoal"
                   }
                 `}
               >
