@@ -41,7 +41,14 @@ export default function Navbar() {
         <div className="pl-20 pr-27.25">
           <div className="flex items-center justify-between h-14">
             {/* Logo */}
-            <a href="#" className="flex items-center">
+            <a href="#" className="flex items-center gap-3">
+              <Image
+                src="/logo/TEMPO.png"
+                alt="TEMPO Atelier"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
               <span className="text-[38px] font-medium tracking-[0.05em] text-white">
                 TEMPO
               </span>

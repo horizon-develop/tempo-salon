@@ -2,6 +2,8 @@
 
 import { useReducer, useCallback, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 
@@ -313,12 +315,20 @@ export default function BookingWizard() {
       {/* Header */}
       <header className="border-b border-ash-gray/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
-          <a
+          <Link
             href="/"
-            className="font-(--font-display) text-xl tracking-[0.25em] text-charcoal hover:opacity-70 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-70 transition-opacity"
           >
-            TEMPO
-          </a>
+            <Image
+              src="/logo/TEMPO.png"
+              alt="TEMPO Atelier"
+              width={32}
+              height={32}
+            />
+            <span className="font-(--font-display) text-xl tracking-[0.25em] text-charcoal">
+              TEMPO
+            </span>
+          </Link>
           {state.step < 6 && (
             <span className="text-[10px] uppercase tracking-[0.2em] text-charcoal font-medium">
               Reservar turno
