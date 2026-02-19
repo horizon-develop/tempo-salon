@@ -49,9 +49,20 @@ export async function DELETE(_request: NextRequest, { params }: Params) {
   if (error) return error;
 
   const { serviceId } = await params;
-  await prisma.service.update({
+
+  const hasBookings = await prisma.booking.count({
+    where: { serviceId },
+  });
+
+  if (hasBookings > 0) {
+    return NextResponse.json(
+      { error: "No se puede eliminar un servicio con reservas asociadas. Desactivalo en su lugar." },
+      { status: 409 }
+    );
+  }
+
+  await prisma.service.delete({
     where: { id: serviceId },
-    data: { isActive: false },
   });
 
   return NextResponse.json({ success: true });

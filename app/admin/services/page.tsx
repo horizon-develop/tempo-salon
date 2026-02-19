@@ -10,6 +10,7 @@ import {
   Scissors,
   ToggleLeft,
   ToggleRight,
+  Trash2,
 } from "lucide-react";
 
 interface ServiceStylist {
@@ -214,6 +215,28 @@ export default function ServicesPage() {
     }
   };
 
+  const deleteService = async (service: Service) => {
+    if (!confirm(`¿Estás seguro de que querés eliminar "${service.name}"? Esta acción no se puede deshacer.`)) {
+      return;
+    }
+
+    try {
+      const res = await fetch(`/api/admin/services/${service.id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Error al eliminar");
+      }
+
+      setServices((prev) => prev.filter((s) => s.id !== service.id));
+      toast.success("Servicio eliminado");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "No se pudo eliminar el servicio");
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
@@ -415,6 +438,13 @@ export default function ServicesPage() {
                     title="Editar"
                   >
                     <Pencil className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => deleteService(service)}
+                    className="text-gray-400 hover:text-red-500 transition-colors"
+                    title="Eliminar"
+                  >
+                    <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
               </div>
