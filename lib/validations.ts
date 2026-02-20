@@ -136,3 +136,23 @@ export const availableDatesQuerySchema = z.object({
 export const updateServiceStylistsSchema = z.object({
   stylistIds: z.array(z.string()),
 });
+
+// ============================================================
+// Payment Config (admin)
+// ============================================================
+
+export const paymentConfigSchema = z
+  .object({
+    isActive: z.boolean(),
+    depositType: z.enum(["FIXED", "PERCENTAGE"]),
+    depositValue: z.number().int().min(1).max(10_000_000),
+  })
+  .refine(
+    (data) => {
+      if (data.depositType === "PERCENTAGE") return data.depositValue >= 1 && data.depositValue <= 100;
+      return data.depositValue > 0;
+    },
+    { message: "Valor de depósito inválido para el tipo seleccionado" }
+  );
+
+export type PaymentConfigInput = z.infer<typeof paymentConfigSchema>;

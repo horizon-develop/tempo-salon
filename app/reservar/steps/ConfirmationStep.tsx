@@ -13,6 +13,7 @@ import {
   Check,
 } from "lucide-react";
 import { useState } from "react";
+import { type PaymentConfig, calcDeposit } from "../BookingWizard";
 
 interface ConfirmationStepProps {
   bookingId: string;
@@ -23,6 +24,7 @@ interface ConfirmationStepProps {
   date: string | null;
   startTime: string | null;
   customerName: string;
+  paymentConfig: PaymentConfig | null;
 }
 
 const SALON_WHATSAPP = "5493794000000";
@@ -60,8 +62,11 @@ export default function ConfirmationStep({
   date,
   startTime,
   customerName,
+  paymentConfig,
 }: ConfirmationStepProps) {
   const [copied, setCopied] = useState(false);
+  const deposit = servicePrice !== null ? calcDeposit(servicePrice, paymentConfig) : 0;
+  const showDeposit = deposit > 0 && servicePrice !== null;
 
   const whatsappMessage = encodeURIComponent(
     `Hola! Soy ${customerName}. Acabo de reservar un turno para ${serviceName} el ${date ? formatDisplayDate(date) : ""} a las ${startTime} hs. Mi codigo de reserva es: ${bookingId}. Muchas gracias!`
@@ -133,6 +138,22 @@ export default function ConfirmationStep({
                     </span>
                   )}
                 </div>
+                {showDeposit && servicePrice !== null && (
+                  <div className="mt-2 space-y-0.5 text-xs text-charcoal border-t border-ash-gray/30 pt-2">
+                    <div className="flex justify-between">
+                      <span>Precio total</span>
+                      <span className="font-medium">{formatPrice(servicePrice)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Seña (Uala)</span>
+                      <span className="font-semibold">{formatPrice(deposit)}</span>
+                    </div>
+                    <div className="flex justify-between text-charcoal/70">
+                      <span>Resto en el local</span>
+                      <span>{formatPrice(servicePrice - deposit)}</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}

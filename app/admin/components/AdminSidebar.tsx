@@ -15,6 +15,7 @@ import {
   LogOut,
   Menu,
   X,
+  Wallet,
 } from "lucide-react";
 
 const navItems = [
@@ -25,6 +26,7 @@ const navItems = [
   { href: "/admin/schedule", label: "Horarios", icon: Clock },
   { href: "/admin/closures", label: "Cierres", icon: XCircle },
   { href: "/admin/absences", label: "Ausencias", icon: UserX },
+  { href: "/admin/pagos", label: "Pagos", icon: Wallet },
 ];
 
 export default function AdminSidebar() {

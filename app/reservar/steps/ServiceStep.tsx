@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Clock, Scissors, Loader2 } from "lucide-react";
+import { type PaymentConfig, calcDeposit } from "../BookingWizard";
 
 interface Stylist {
   id: string;
@@ -21,6 +22,7 @@ interface Service {
 interface ServiceStepProps {
   selectedServiceId: string | null;
   onSelect: (service: Service) => void;
+  paymentConfig: PaymentConfig | null;
 }
 
 function formatPrice(cents: number): string {
@@ -36,7 +38,7 @@ function formatDuration(minutes: number): string {
   return `${h}h ${m}min`;
 }
 
-export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStepProps) {
+export default function ServiceStep({ selectedServiceId, onSelect, paymentConfig }: ServiceStepProps) {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -94,6 +96,7 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
       <div className="grid gap-4 sm:grid-cols-2 max-w-3xl mx-auto">
         {services.map((service, index) => {
           const isSelected = selectedServiceId === service.id;
+          const deposit = calcDeposit(service.price, paymentConfig);
 
           return (
             <button
@@ -152,6 +155,13 @@ export default function ServiceStep({ selectedServiceId, onSelect }: ServiceStep
                   </span>
                 </div>
               </div>
+
+              {/* Deposit */}
+              {deposit > 0 && (
+                <p className="ml-7 mt-1.5 text-xs text-charcoal">
+                  Seña: {formatPrice(deposit)}
+                </p>
+              )}
 
               {/* Stylists */}
               {service.stylists.length > 0 && (

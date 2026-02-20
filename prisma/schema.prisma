@@ -43,6 +43,11 @@ enum BookingStatus {
   NO_SHOW
 }
 
+enum DepositType {
+  FIXED
+  PERCENTAGE
+}
+
 // ============================================================
 // Business models
 // ============================================================
@@ -197,4 +202,18 @@ model Booking {
   @@index([date, stylistId])
   @@index([date, status])
   @@index([customerPhone])
+}
+
+// ============================================================
+// Payment configuration (singleton)
+// ============================================================
+
+model PaymentConfig {
+  id           String      @id @default(cuid())
+  isActive     Boolean     @default(false)
+  depositType  DepositType @default(PERCENTAGE)
+  depositValue Int         @default(50) // cents if FIXED, 1–100 if PERCENTAGE
+  updatedAt    DateTime    @updatedAt @map("updated_at") @db.Timestamptz
+
+  @@map("payment_config")
 }

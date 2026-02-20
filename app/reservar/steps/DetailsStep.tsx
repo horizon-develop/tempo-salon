@@ -12,6 +12,7 @@ import {
   Loader2,
   AlertCircle,
 } from "lucide-react";
+import { type PaymentConfig, calcDeposit } from "../BookingWizard";
 
 interface BookingSummary {
   serviceName: string | null;
@@ -24,6 +25,7 @@ interface BookingSummary {
 
 interface DetailsStepProps {
   summary: BookingSummary;
+  paymentConfig: PaymentConfig | null;
   customerName: string;
   customerPhone: string;
   customerEmail: string;
@@ -58,6 +60,7 @@ function formatDisplayDate(dateStr: string): string {
 
 export default function DetailsStep({
   summary,
+  paymentConfig,
   customerName,
   customerPhone,
   customerEmail,
@@ -216,7 +219,7 @@ export default function DetailsStep({
 
           {/* Mobile summary (visible only on mobile) */}
           <div className="lg:hidden">
-            <SummaryCard summary={summary} />
+            <SummaryCard summary={summary} paymentConfig={paymentConfig} />
           </div>
 
           {/* Submit */}
@@ -244,7 +247,7 @@ export default function DetailsStep({
         {/* Desktop summary (hidden on mobile) */}
         <div className="hidden lg:block w-80 shrink-0">
           <div className="sticky top-8">
-            <SummaryCard summary={summary} />
+            <SummaryCard summary={summary} paymentConfig={paymentConfig} />
           </div>
         </div>
       </div>
@@ -252,7 +255,10 @@ export default function DetailsStep({
   );
 }
 
-function SummaryCard({ summary }: { summary: BookingSummary }) {
+function SummaryCard({ summary, paymentConfig }: { summary: BookingSummary; paymentConfig: PaymentConfig | null }) {
+  const deposit = summary.servicePrice !== null ? calcDeposit(summary.servicePrice, paymentConfig) : 0;
+  const showDeposit = deposit > 0 && summary.servicePrice !== null;
+
   return (
     <div className="border border-ash-gray/50 rounded-sm p-6 bg-silver-gray/20">
       <h3 className="text-xs uppercase tracking-[0.2em] text-charcoal font-medium mb-5">
@@ -308,14 +314,37 @@ function SummaryCard({ summary }: { summary: BookingSummary }) {
       {summary.servicePrice !== null && (
         <>
           <div className="silver-line my-5" />
-          <div className="flex items-center justify-between">
-            <span className="text-xs uppercase tracking-[0.15em] text-charcoal font-medium">
-              Total
-            </span>
-            <span className="text-lg font-semibold text-charcoal">
-              {formatPrice(summary.servicePrice)}
-            </span>
-          </div>
+          {showDeposit ? (
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-charcoal">Precio total</span>
+                <span className="text-sm font-medium text-charcoal">
+                  {formatPrice(summary.servicePrice)}
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-charcoal">Seña (Uala)</span>
+                <span className="text-sm font-semibold text-charcoal">
+                  {formatPrice(deposit)}
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-charcoal">Resto en el local</span>
+                <span className="text-sm text-charcoal">
+                  {formatPrice(summary.servicePrice - deposit)}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-between">
+              <span className="text-xs uppercase tracking-[0.15em] text-charcoal font-medium">
+                Total
+              </span>
+              <span className="text-lg font-semibold text-charcoal">
+                {formatPrice(summary.servicePrice)}
+              </span>
+            </div>
+          )}
         </>
       )}
     </div>

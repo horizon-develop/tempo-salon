@@ -206,6 +206,19 @@ async function main() {
   }
   console.log("Stylist schedules created");
 
+  // 7. Upsert initial PaymentConfig (disabled by default)
+  await prisma.paymentConfig.upsert({
+    where: { id: "payment-config-singleton" },
+    update: {},
+    create: {
+      id: "payment-config-singleton",
+      isActive: false,
+      depositType: "PERCENTAGE",
+      depositValue: 50,
+    },
+  });
+  console.log("PaymentConfig seeded (disabled, 50% percentage)");
+
   console.log("Seeding complete!");
 }
 

@@ -103,7 +103,7 @@ export default function TimeSlotStep({
   });
 
   const groups = [
-    { label: "Manana", slots: morning },
+    { label: "Mañana", slots: morning },
     { label: "Tarde", slots: afternoon },
     { label: "Noche", slots: evening },
   ].filter((g) => g.slots.length > 0);

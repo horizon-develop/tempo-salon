@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducer, useCallback, useEffect, useRef } from "react";
+import { useReducer, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +14,22 @@ import DateStep from "./steps/DateStep";
 import TimeSlotStep from "./steps/TimeSlotStep";
 import DetailsStep from "./steps/DetailsStep";
 import ConfirmationStep from "./steps/ConfirmationStep";
+
+// ---------------------------------------------------------------------------
+// Payment Config
+// ---------------------------------------------------------------------------
+
+export interface PaymentConfig {
+  isActive: boolean;
+  depositType: "FIXED" | "PERCENTAGE";
+  depositValue: number;
+}
+
+export function calcDeposit(servicePrice: number, config: PaymentConfig | null): number {
+  if (!config?.isActive) return 0;
+  if (config.depositType === "FIXED") return Math.min(config.depositValue, servicePrice);
+  return Math.round((servicePrice * config.depositValue) / 100);
+}
 
 // ---------------------------------------------------------------------------
 // State
@@ -165,6 +181,25 @@ export default function BookingWizard() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const contentRef = useRef<HTMLDivElement>(null);
   const preselectedRef = useRef(false);
+  const [paymentConfig, setPaymentConfig] = useState<PaymentConfig | null>(null);
+
+  // Fetch payment config on mount
+  useEffect(() => {
+    fetch("/api/payment-config")
+      .then((res) => res.json())
+      .then((data: { isActive: boolean; depositType?: "FIXED" | "PERCENTAGE"; depositValue?: number }) => {
+        if (data.isActive && data.depositType && data.depositValue != null) {
+          setPaymentConfig({
+            isActive: true,
+            depositType: data.depositType,
+            depositValue: data.depositValue,
+          });
+        }
+      })
+      .catch(() => {
+        // Silently fail, deposit just won't show
+      });
+  }, []);
 
   // Pre-select service from query param
   const preselectedServiceId = searchParams.get("service");
@@ -368,7 +403,7 @@ export default function BookingWizard() {
         <div className="flex gap-10">
           {/* Main step area */}
           <div className="flex-1 min-w-0">
-            <StepContent state={state} handlers={{
+            <StepContent state={state} paymentConfig={paymentConfig} handlers={{
               handleServiceSelect,
               handleStylistSelect,
               handleDateSelect,
@@ -382,7 +417,7 @@ export default function BookingWizard() {
           {state.step >= 2 && state.step <= 4 && state.serviceId && (
             <aside className="hidden lg:block w-72 shrink-0">
               <div className="sticky top-8">
-                <DesktopSummary state={state} />
+                <DesktopSummary state={state} paymentConfig={paymentConfig} />
               </div>
             </aside>
           )}
@@ -398,6 +433,7 @@ export default function BookingWizard() {
 
 interface StepContentProps {
   state: BookingState;
+  paymentConfig: PaymentConfig | null;
   handlers: {
     handleServiceSelect: (service: {
       id: string;
@@ -414,13 +450,14 @@ interface StepContentProps {
   };
 }
 
-function StepContent({ state, handlers }: StepContentProps) {
+function StepContent({ state, paymentConfig, handlers }: StepContentProps) {
   switch (state.step) {
     case 1:
       return (
         <ServiceStep
           selectedServiceId={state.serviceId}
           onSelect={handlers.handleServiceSelect}
+          paymentConfig={paymentConfig}
         />
       );
 
@@ -465,6 +502,7 @@ function StepContent({ state, handlers }: StepContentProps) {
             date: state.date,
             startTime: state.startTime,
           }}
+          paymentConfig={paymentConfig}
           customerName={state.customerName}
           customerPhone={state.customerPhone}
           customerEmail={state.customerEmail}
@@ -485,6 +523,7 @@ function StepContent({ state, handlers }: StepContentProps) {
           date={state.date}
           startTime={state.startTime}
           customerName={state.customerName}
+          paymentConfig={paymentConfig}
         />
       );
   }
@@ -494,7 +533,10 @@ function StepContent({ state, handlers }: StepContentProps) {
 // Desktop Summary Sidebar
 // ---------------------------------------------------------------------------
 
-function DesktopSummary({ state }: { state: BookingState }) {
+function DesktopSummary({ state, paymentConfig }: { state: BookingState; paymentConfig: PaymentConfig | null }) {
+  const deposit = state.servicePrice !== null ? calcDeposit(state.servicePrice, paymentConfig) : 0;
+  const showDeposit = deposit > 0 && state.servicePrice !== null;
+
   return (
     <div className="border border-ash-gray/40 rounded-sm p-5 bg-silver-gray/10 animate-fade-in">
       <h3 className="text-[10px] uppercase tracking-[0.2em] text-charcoal font-medium mb-4">
@@ -510,6 +552,11 @@ function DesktopSummary({ state }: { state: BookingState }) {
               {state.servicePrice !== null && state.serviceDuration !== null && " · "}
               {state.serviceDuration !== null && formatDurationSidebar(state.serviceDuration)}
             </p>
+            {showDeposit && (
+              <p className="text-xs text-charcoal mt-0.5">
+                Seña: {formatPriceSidebar(deposit)}
+              </p>
+            )}
           </div>
         )}
 
